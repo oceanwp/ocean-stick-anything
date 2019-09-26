@@ -1,0 +1,93 @@
+# Copyright (C) 2016 
+# This file is distributed under the same license as the  package.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
+"POT-Creation-Date: 2018-06-21 21:58+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"Last-Translator: OceanWP\n"
+"Language-Team: OceanWP\n"
+"X-Generator: Poedit 2.0.8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: _esc_attr__;esc_attr_x;esc_attr_e;esc_html__;"
+"esc_html_e;esc_html_x;__;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Textdomain-Support: yes\n"
+"Language: en_US\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: ocean-stick-anything.php:130 ocean-stick-anything.php:139
+msgid "Cheatin&#8217; huh?"
+msgstr ""
+
+#: ocean-stick-anything.php:242 ocean-stick-anything.php:243
+msgid "Stick Elements"
+msgstr ""
+
+#: ocean-stick-anything.php:278
+msgid "Stick Anything"
+msgstr ""
+
+#: ocean-stick-anything.php:279
+msgid ""
+"On this page, you can stick any element of your site just by adding the "
+"elements in the input."
+msgstr ""
+
+#: ocean-stick-anything.php:299
+msgid "Stick"
+msgstr ""
+
+#: ocean-stick-anything.php:305
+msgid "Elements"
+msgstr ""
+
+#: ocean-stick-anything.php:310
+msgid ""
+"Add the eleemnt(s) you want to stick separated by a comma. If you want to "
+"stick the sidebar, add \".widget-area\"."
+msgstr ""
+
+#: ocean-stick-anything.php:316
+msgid "Offset (px)"
+msgstr ""
+
+#: ocean-stick-anything.php:321
+msgid ""
+"Add a space in pixels between the top of the page and the sticky element ."
+msgstr ""
+
+#: ocean-stick-anything.php:330
+msgid "Responsive"
+msgstr ""
+
+#: ocean-stick-anything.php:333
+msgid ""
+"Here you can choose to un-stick the element(s) when your screen is smaller."
+msgstr ""
+
+#: ocean-stick-anything.php:340
+msgid "Un-stick From (px)"
+msgstr ""
+
+#: ocean-stick-anything.php:375
+msgid "Ocean Sticky Header"
+msgstr ""
+
+#: ocean-stick-anything.php:377
+msgid ""
+"This plugin is a must-have for any type of website, it allow you to fix "
+"your header automatically or manually if you create a custom header style "
+"with many control settings."
+msgstr ""
+
+#: ocean-stick-anything.php:378
+msgid "Read More"
+msgstr ""
