@@ -1,9 +1,9 @@
 === Ocean Stick Anything ===
-Contributors: oceanwp
+Contributors: oceanwp, apprimit
 Tags: stick, sticky, stick anything, oceanwp
-Requires at least: 4.5
-Tested up to: 5.2
-Stable tag: 1.0.3
+Requires at least: 5.3
+Tested up to: 5.4
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,9 @@ This plugin will only work with the [OceanWP](https://oceanwp.org/) theme. You a
 1. Settings.
 
 == Changelog ==
+
+= 1.0.4 =
+- Added: Version updated for WordPress 5.4.
 
 = 1.0.3 =
 - Added: Codes for the Freemius switch.
