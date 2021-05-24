@@ -172,7 +172,6 @@ final class Ocean_Stick_Anything {
 		if ( 'OceanWP' == $theme->name || 'oceanwp' == $theme->template ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 999 );
 			add_filter( 'ocean_localize_array', array( $this, 'localize_array' ) );
-			add_filter( 'body_class', array( $this, 'body_class' ), 999 );
 			add_action( 'admin_menu', array( $this, 'add_page' ), 60 );
 			add_action( 'admin_init', array( $this, 'register_settings' ) );
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
@@ -198,30 +197,19 @@ final class Ocean_Stick_Anything {
 
 		$array['stickElements'] = get_option( 'osa_stick_elements' );
 
+		// If offset
+		$isOffset = get_option( 'osa_stick_offset' );
+		if ( ! empty( $isOffset ) ) {
+			$array['isOffset'] = $isOffset;
+		}
+
 		// If un-stick
 		$unstick = get_option( 'osa_unstick' );
 		if ( ! empty( $unstick ) ) {
 			$array['unStick'] = $unstick;
 		}
-		
+
 		return $array;
-
-	}
-
-	/**
-	 * Add data-offset in the body to make the Offset setting to work
-	 *
-	 * @since  1.0.0
-	 */
-	public function body_class( $classes ) {
-
-		// If custom offset
-		$offset = get_option( 'osa_stick_offset' );
-		if ( ! empty( $offset ) ) {
-			$classes[] = '" data-offset="'. $offset;
-		}
-
-		return $classes;
 
 	}
 
@@ -231,7 +219,7 @@ final class Ocean_Stick_Anything {
 	 * @since  1.0.0
 	 */
 	public function add_page() {
-		
+
 		add_submenu_page(
 			'oceanwp-panel',
 			esc_html__( 'Stick Elements', 'ocean-stick-anything' ),
