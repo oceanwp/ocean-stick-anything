@@ -1,0 +1,17 @@
+== Changelog ==
+
+= 1.0.4 =
+- Added: Version updated for WordPress 5.4.
+
+= 1.0.3 =
+- Added: Codes for the Freemius switch.
+- Fixed: Small error issue.
+
+= 1.0.2 =
+- Fixed: Extra bracket in the data offset in the body tag.
+
+= 1.0.1 =
+- Tweak: Sticky script improved, the sticky can be destroyed on window resize.
+
+= 1.0.0 =
+- Initial release.
