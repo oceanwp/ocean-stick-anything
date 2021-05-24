@@ -16,14 +16,16 @@ function oceanwpStickAnything() {
 	"use strict"
 
 	var $offset 		= 0,
-	    $stickOffset 	= $j( 'body' ).data( 'offset' ),
+		$body 	        = $j( 'body' ),
+	    $stickOffset 	= oceanwpLocalize.isOffset,
 	    $adminBar 		= $j( '#wpadminbar' ),
 	    $stickyTopBar 	= $j( '#top-bar-wrap' ),
 	    $stickyHeader 	= $j( '#site-header' );
 
     // If custom offset
     if ( $stickOffset ) {
-		$offset = $offset + $stickOffset;
+		$body.attr('data-offset', parseInt($stickOffset));
+		$offset = parseInt($offset) + parseInt($stickOffset);
 	}
 
     // Offset adminbar

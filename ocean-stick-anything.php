@@ -3,11 +3,11 @@
  * Plugin Name:			Ocean Stick Anything
  * Plugin URI:			https://oceanwp.org/extension/ocean-stick-anything/
  * Description:			A simple plugin to stick anything you want on your site.
- * Version:				1.0.4
+ * Version:				1.0.6
  * Author:				OceanWP
  * Author URI:			https://oceanwp.org/
  * Requires at least:	5.3
- * Tested up to:		5.4
+ * Tested up to:		5.7.2
  *
  * Text Domain: ocean-stick-anything
  * Domain Path: /languages
@@ -86,7 +86,7 @@ final class Ocean_Stick_Anything {
 		$this->token 			= 'ocean-stick-anything';
 		$this->plugin_url 		= plugin_dir_url( __FILE__ );
 		$this->plugin_path 		= plugin_dir_path( __FILE__ );
-		$this->version 			= '1.0.4';
+		$this->version 			= '1.0.6';
 
 		register_activation_hook( __FILE__, array( $this, 'install' ) );
 
@@ -172,7 +172,6 @@ final class Ocean_Stick_Anything {
 		if ( 'OceanWP' == $theme->name || 'oceanwp' == $theme->template ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 999 );
 			add_filter( 'ocean_localize_array', array( $this, 'localize_array' ) );
-			add_filter( 'body_class', array( $this, 'body_class' ), 999 );
 			add_action( 'admin_menu', array( $this, 'add_page' ), 60 );
 			add_action( 'admin_init', array( $this, 'register_settings' ) );
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
@@ -198,30 +197,19 @@ final class Ocean_Stick_Anything {
 
 		$array['stickElements'] = get_option( 'osa_stick_elements' );
 
+		// If offset
+		$isOffset = get_option( 'osa_stick_offset' );
+		if ( ! empty( $isOffset ) ) {
+			$array['isOffset'] = $isOffset;
+		}
+
 		// If un-stick
 		$unstick = get_option( 'osa_unstick' );
 		if ( ! empty( $unstick ) ) {
 			$array['unStick'] = $unstick;
 		}
-		
+
 		return $array;
-
-	}
-
-	/**
-	 * Add data-offset in the body to make the Offset setting to work
-	 *
-	 * @since  1.0.0
-	 */
-	public function body_class( $classes ) {
-
-		// If custom offset
-		$offset = get_option( 'osa_stick_offset' );
-		if ( ! empty( $offset ) ) {
-			$classes[] = '" data-offset="'. $offset;
-		}
-
-		return $classes;
 
 	}
 
@@ -231,7 +219,7 @@ final class Ocean_Stick_Anything {
 	 * @since  1.0.0
 	 */
 	public function add_page() {
-		
+
 		add_submenu_page(
 			'oceanwp-panel',
 			esc_html__( 'Stick Elements', 'ocean-stick-anything' ),
@@ -421,7 +409,7 @@ final class Ocean_Stick_Anything {
 	public static function admin_scripts( $hook ) {
 
 		// Only load scripts when needed
-		if ( OE_ADMIN_PANEL_HOOK_PREFIX . '-stick' != $hook ) {
+		if ( class_exists( 'Ocean_Extra' ) && OE_ADMIN_PANEL_HOOK_PREFIX . '-stick' != $hook ) {
 			return;
 		}
 
