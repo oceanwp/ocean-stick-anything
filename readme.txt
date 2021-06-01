@@ -33,7 +33,7 @@ This plugin will only work with the [OceanWP](https://oceanwp.org/) theme. You a
 
 = 1.0.6 =
 - Fixed: Warning: Use of undefined constant OE_ADMIN_PANEL_HOOK_PREFIX.
-- Fixed: Stick Anything Offset Setting won't function #1
+- Fixed: Offset Settings don't function #1
 
 = 1.0.5 =
 - Added: Version updated for WordPress 5.7.
