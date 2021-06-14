@@ -18,8 +18,6 @@ class OW_StickAnythings extends OW_Base {
         const options = this.getSettings("options");
 
         return {
-            stickyElements: document.querySelectorAll(options.stickElements),
-            $stickyElements: jQuery(options.stickElements),
             wpAdminbar: document.querySelector(selectors.wpAdminbar),
             topbar: document.querySelector(selectors.topbar),
             header: document.querySelector(selectors.header),
@@ -30,7 +28,9 @@ class OW_StickAnythings extends OW_Base {
     onInit() {
         super.onInit();
 
-        if (!!this.elements.stickyElements) {
+        const options = this.getSettings("options");
+
+        if (!!options.stickElements) {
             this.setElementTopOffset();
             this.initSticky();
         }
@@ -40,13 +40,14 @@ class OW_StickAnythings extends OW_Base {
         const settings = this.getSettings();
         const options = settings.options;
         const topOffset = settings.topOffset;
+        const $stickyElements = jQuery(options.stickElements);
 
-        this.elements.$stickyElements.stick_in_parent({
+        $stickyElements.stick_in_parent({
             offset_top: topOffset,
         });
 
         if (!!options.unStick && window.innerWidth <= options.unStick) {
-            this.elements.$stickyElements.trigger("sticky_kit:detach");
+            $stickyElements.trigger("sticky_kit:detach");
         }
     }
 
