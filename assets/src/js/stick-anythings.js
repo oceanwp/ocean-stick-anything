@@ -41,7 +41,6 @@ class OW_StickAnythings extends OW_Base {
         const options = settings.options;
         const topOffset = settings.topOffset;
 
-        console.log(topOffset);
         this.elements.$stickyElements.stick_in_parent({
             offset_top: topOffset,
         });
