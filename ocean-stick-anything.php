@@ -195,7 +195,7 @@ final class Ocean_Stick_Anything {
 	 */
 	public function scripts() {
 		wp_enqueue_script( 'sticky-kit', plugins_url( '/assets/js/vendors/sticky-kit.min.js', __FILE__ ), array( 'jquery' ), $this->version, true );
-		wp_enqueue_script( 'osa-script', plugins_url( '/assets/js/stick-anythings.min.js', __FILE__ ), array( 'jquery' ), $this->version, true );
+		wp_enqueue_script( 'osa-script', plugins_url( '/assets/js/stick-anythings.js', __FILE__ ), array( 'jquery' ), $this->version, true );
 	}
 
 	/**
