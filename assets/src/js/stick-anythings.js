@@ -101,8 +101,8 @@ class OW_StickAnythings extends OW_Base {
         const currentTopOffset = this.getSettings("topOffset");
 
         if (
-            !this.elements.header.classList.contains("vertical-header") &&
-            this.elements.header.classList.contains("fixed-scroll")
+            !this.elements.header?.classList.contains("vertical-header") &&
+            this.elements.header?.classList.contains("fixed-scroll")
         ) {
             const headerTopOffset = Number.parseInt(this.elements.header.offsetHeight);
 
