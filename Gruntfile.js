@@ -182,7 +182,7 @@ module.exports = function (grunt) {
     });
 
     // Dev task
-    grunt.registerTask("default", ["cssmin:prod"]);
+    grunt.registerTask("default", ["browserify:dev", "uglify:prod", "cssmin:prod", "autoprefixer:main"]);
 
     // Production task
     grunt.registerTask("build", ["newer:uglify:prod", "autoprefixer:main", "csscomb:main", "copy"]);
