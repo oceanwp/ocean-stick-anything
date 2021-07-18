@@ -36,6 +36,16 @@ class OW_StickAnythings extends OW_Base {
         }
     }
 
+    bindEvents() {
+        window.addEventListener("resize", () => {
+            const options = this.getSettings("options");
+
+            if (!!options.stickElements) {
+                this.initSticky();
+            }
+        });
+    }
+
     initSticky() {
         const settings = this.getSettings();
         const options = settings.options;
