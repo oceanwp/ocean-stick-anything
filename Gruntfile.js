@@ -96,7 +96,7 @@ module.exports = function (grunt) {
             },
             scss: {
                 files: ["assets/css/**/*.scss"],
-                tasks: ["newer:sass:dev", "newer:autoprefixer:main"],
+                tasks: ["newer:autoprefixer:main"],
             },
             js: {
                 files: ["assets/src/**/**.js"],
@@ -182,10 +182,10 @@ module.exports = function (grunt) {
     });
 
     // Dev task
-    grunt.registerTask("default", ["browserify:dev", "uglify:prod", "cssmin:prod", "autoprefixer:main"]);
+    grunt.registerTask("default", ["browserify:dev", "uglify:prod", "autoprefixer:main", "cssmin:prod"]);
 
     // Production task
-    grunt.registerTask("build", ["newer:uglify:prod", "autoprefixer:main", "csscomb:main", "copy"]);
+    grunt.registerTask("build", ["copy"]);
 
     // Package task
     grunt.registerTask("package", ["compress"]);
