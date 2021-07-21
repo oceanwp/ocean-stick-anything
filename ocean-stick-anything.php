@@ -3,7 +3,7 @@
  * Plugin Name:         Ocean Stick Anything
  * Plugin URI:          https://oceanwp.org/extension/ocean-stick-anything/
  * Description:         A simple plugin to stick anything you want on your site.
- * Version:             2.0.0
+ * Version:             2.0.1
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.3
@@ -91,7 +91,7 @@ final class Ocean_Stick_Anything {
 		$this->token       = 'ocean-stick-anything';
 		$this->plugin_url  = plugin_dir_url( __FILE__ );
 		$this->plugin_path = plugin_dir_path( __FILE__ );
-		$this->version     = '2.0.0';
+		$this->version     = '2.0.1';
 
 		register_activation_hook( __FILE__, array( $this, 'install' ) );
 
@@ -180,7 +180,10 @@ final class Ocean_Stick_Anything {
 		$theme = wp_get_theme();
 
 		if ( 'OceanWP' == $theme->name || 'oceanwp' == $theme->template ) {
-			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 999 );
+			if ( ! is_admin() ) {
+				add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 999 );
+			}
+
 			add_filter( 'ocean_localize_array', array( $this, 'localize_array' ) );
 			add_action( 'admin_menu', array( $this, 'add_page' ), 60 );
 			add_action( 'admin_init', array( $this, 'register_settings' ) );
