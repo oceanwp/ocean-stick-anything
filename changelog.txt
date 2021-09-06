@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.0.2 =
+- Improved: Scripts dependencies.
+
 = 2.0.1 =
 - Fixed: Widgets admin page issue.
 
