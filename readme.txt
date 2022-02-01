@@ -1,11 +1,11 @@
 === Ocean Stick Anything ===
-Contributors: oceanwp, apprimit
+Contributors: oceanwp, apprimit, wpfleek
 Tags: stick, sticky, stick anything, oceanwp
 Requires at least: 5.3
-Tested up to: 5.7.2
-Stable tag: 1.0.6
+Tested up to: 5.9
+Stable tag: 2.0.3
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
@@ -31,9 +31,21 @@ This plugin will only work with the [OceanWP](https://oceanwp.org/) theme. You a
 
 == Changelog ==
 
+= 2.0.3 =
+- Added: Updated: WordPress version number for compatibility.
+
+= 2.0.2 =
+- Improved: Scripts dependencies.
+
+= 2.0.1 =
+- Fixed: Widgets admin page issue.
+
+= 2.0.0 =
+- Added: Vanilla JS.
+
 = 1.0.6 =
 - Fixed: Warning: Use of undefined constant OE_ADMIN_PANEL_HOOK_PREFIX.
-- Fixed: Stick Anything Offset Setting won't function #1
+- Fixed: Offset Settings don't function #1
 
 = 1.0.5 =
 - Added: Version updated for WordPress 5.7.

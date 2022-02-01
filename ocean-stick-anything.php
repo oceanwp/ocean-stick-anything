@@ -1,13 +1,13 @@
 <?php
 /**
- * Plugin Name:			Ocean Stick Anything
- * Plugin URI:			https://oceanwp.org/extension/ocean-stick-anything/
- * Description:			A simple plugin to stick anything you want on your site.
- * Version:				1.0.6
- * Author:				OceanWP
- * Author URI:			https://oceanwp.org/
- * Requires at least:	5.3
- * Tested up to:		5.7.2
+ * Plugin Name:         Ocean Stick Anything
+ * Plugin URI:          https://oceanwp.org/extension/ocean-stick-anything/
+ * Description:         A simple plugin to stick anything you want on your site.
+ * Version:             2.0.3
+ * Author:              OceanWP
+ * Author URI:          https://oceanwp.org/
+ * Requires at least:   5.3
+ * Tested up to:        5.9
  *
  * Text Domain: ocean-stick-anything
  * Domain Path: /languages
@@ -38,21 +38,23 @@ Ocean_Stick_Anything();
  * Main Ocean_Stick_Anything Class
  *
  * @class Ocean_Stick_Anything
- * @version	1.0.0
+ * @version 1.0.0
  * @since 1.0.0
- * @package	Ocean_Stick_Anything
+ * @package Ocean_Stick_Anything
  */
 final class Ocean_Stick_Anything {
 	/**
 	 * Ocean_Stick_Anything The single instance of Ocean_Stick_Anything.
-	 * @var 	object
+	 *
+	 * @var     object
 	 * @access  private
-	 * @since 	1.0.0
+	 * @since   1.0.0
 	 */
 	private static $_instance = null;
 
 	/**
 	 * The token.
+	 *
 	 * @var     string
 	 * @access  public
 	 * @since   1.0.0
@@ -61,6 +63,7 @@ final class Ocean_Stick_Anything {
 
 	/**
 	 * The version number.
+	 *
 	 * @var     string
 	 * @access  public
 	 * @since   1.0.0
@@ -70,6 +73,7 @@ final class Ocean_Stick_Anything {
 	// Admin - Start
 	/**
 	 * The admin object.
+	 *
 	 * @var     object
 	 * @access  public
 	 * @since   1.0.0
@@ -78,15 +82,16 @@ final class Ocean_Stick_Anything {
 
 	/**
 	 * Constructor function.
+	 *
 	 * @access  public
 	 * @since   1.0.0
 	 * @return  void
 	 */
 	public function __construct( $widget_areas = array() ) {
-		$this->token 			= 'ocean-stick-anything';
-		$this->plugin_url 		= plugin_dir_url( __FILE__ );
-		$this->plugin_path 		= plugin_dir_path( __FILE__ );
-		$this->version 			= '1.0.6';
+		$this->token       = 'ocean-stick-anything';
+		$this->plugin_url  = plugin_dir_url( __FILE__ );
+		$this->plugin_path = plugin_dir_path( __FILE__ );
+		$this->version     = '2.0.3';
 
 		register_activation_hook( __FILE__, array( $this, 'install' ) );
 
@@ -106,13 +111,15 @@ final class Ocean_Stick_Anything {
 	 * @return Main Ocean_Stick_Anything instance
 	 */
 	public static function instance() {
-		if ( is_null( self::$_instance ) )
+		if ( is_null( self::$_instance ) ) {
 			self::$_instance = new self();
+		}
 		return self::$_instance;
 	} // End instance()
 
 	/**
 	 * Load the localisation file.
+	 *
 	 * @access  public
 	 * @since   1.0.0
 	 * @return  void
@@ -142,6 +149,7 @@ final class Ocean_Stick_Anything {
 	/**
 	 * Installation.
 	 * Runs on activation. Logs the version number and assigns a notice message to a WordPress option.
+	 *
 	 * @access  public
 	 * @since   1.0.0
 	 * @return  void
@@ -152,6 +160,7 @@ final class Ocean_Stick_Anything {
 
 	/**
 	 * Log the plugin version number.
+	 *
 	 * @access  private
 	 * @since   1.0.0
 	 * @return  void
@@ -164,13 +173,17 @@ final class Ocean_Stick_Anything {
 	/**
 	 * Setup all the things.
 	 * Only executes if OceanWP or a child theme using OceanWP as a parent is active and the extension specific filter returns true.
+	 *
 	 * @return void
 	 */
 	public function setup() {
 		$theme = wp_get_theme();
 
 		if ( 'OceanWP' == $theme->name || 'oceanwp' == $theme->template ) {
-			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 999 );
+			if ( ! is_admin() ) {
+				add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 999 );
+			}
+
 			add_filter( 'ocean_localize_array', array( $this, 'localize_array' ) );
 			add_action( 'admin_menu', array( $this, 'add_page' ), 60 );
 			add_action( 'admin_init', array( $this, 'register_settings' ) );
@@ -184,8 +197,8 @@ final class Ocean_Stick_Anything {
 	 * @since   1.0.0
 	 */
 	public function scripts() {
-		wp_enqueue_script( 'sticky-kit', plugins_url( '/assets/js/sticky-kit.min.js', __FILE__ ), array( 'jquery' ), $this->version, true );
-		wp_enqueue_script( 'osa-script', plugins_url( '/assets/js/main.min.js', __FILE__ ), array( 'jquery' ), $this->version, true );
+		wp_enqueue_script( 'sticky-kit', plugins_url( '/assets/js/vendors/sticky-kit.min.js', __FILE__ ), array( 'jquery' ), $this->version, true );
+		wp_enqueue_script( 'osa-script', plugins_url( '/assets/js/stick-anythings.min.js', __FILE__ ), array( 'oceanwp-main', 'sticky-kit' ), $this->version, true );
 	}
 
 	/**
@@ -238,9 +251,9 @@ final class Ocean_Stick_Anything {
 	public static function get_settings() {
 
 		$settings = array(
-			'stick_elements' 	=> get_option( 'osa_stick_elements' ),
-			'stick_offset' 		=> get_option( 'osa_stick_offset' ),
-			'unstick' 			=> get_option( 'osa_unstick' ),
+			'stick_elements' => get_option( 'osa_stick_elements' ),
+			'stick_offset'   => get_option( 'osa_stick_offset' ),
+			'unstick'        => get_option( 'osa_unstick' ),
 		);
 
 		return apply_filters( 'osa_stick_settings', $settings );
@@ -265,7 +278,8 @@ final class Ocean_Stick_Anything {
 
 				<?php
 				if ( ! class_exists( 'Ocean_Sticky_Header' )
-					&& true != apply_filters( 'oceanwp_theme_panel_sidebar_enabled', false ) ) { ?>
+					&& true != apply_filters( 'oceanwp_theme_panel_sidebar_enabled', false ) ) {
+					?>
 					<div class="oceanwp-sidebar right clr">
 						<?php self::admin_page_sidebar(); ?>
 					</div>
@@ -281,12 +295,13 @@ final class Ocean_Stick_Anything {
 
 							<h2><?php esc_html_e( 'Stick', 'ocean-stick-anything' ); ?></h2>
 							<p class="description">
-								<?php echo
-									sprintf(
-										esc_html__( 'You need to add your CSS selector in the Elements field, %1$sfollow this article%2$s to know how to get a CSS selector.', 'ocean-extra' ),
-										'<a href="https://docs.oceanwp.org/article/529-how-to-get-a-css-selector" target="_blank">',
-										'</a>'
-									); ?>
+								<?php
+								echo sprintf(
+									esc_html__( 'You need to add your CSS selector in the Elements field, %1$sfollow this article%2$s to know how to get a CSS selector.', 'ocean-extra' ),
+									'<a href="https://docs.oceanwp.org/article/529-how-to-get-a-css-selector" target="_blank">',
+									'</a>'
+								);
+								?>
 							</p>
 
 							<table class="form-table">
@@ -349,7 +364,7 @@ final class Ocean_Stick_Anything {
 
 		</div>
 
-	<?php
+		<?php
 	}
 
 	/**
@@ -360,18 +375,19 @@ final class Ocean_Stick_Anything {
 	public static function admin_page_sidebar() {
 
 		// Link
-		$link = 'https://oceanwp.org/extension/ocean-sticky-header/?utm_source=dash&utm_medium=stick-panel&utm_campaign=sticky'; ?>
+		$link = 'https://oceanwp.org/extension/ocean-sticky-header/?utm_source=dash&utm_medium=stick-panel&utm_campaign=sticky';
+		?>
 
 		<div class="oceanwp-bloc oceanwp-sticky">
 			<h3><?php esc_html_e( 'Ocean Sticky Header', 'ocean-extra' ); ?></h3>
 			<div class="content-wrap">
 				<p class="content"><?php esc_html_e( 'This plugin is a must-have for any type of website, it allow you to fix your header automatically or manually if you create a custom header style with many control settings.', 'ocean-extra' ); ?></p>
-				<a href="<?php echo esc_url( $link ) ?>" class="button owp-button" target="_blank"><?php esc_html_e( 'Read More', 'ocean-extra' ); ?></a>
+				<a href="<?php echo esc_url( $link ); ?>" class="button owp-button" target="_blank"><?php esc_html_e( 'Read More', 'ocean-extra' ); ?></a>
 			</div>
 			<i class="dashicons dashicons-admin-post"></i>
 		</div>
 
-	<?php
+		<?php
 	}
 
 	/**
@@ -380,7 +396,7 @@ final class Ocean_Stick_Anything {
 	 * @since 1.0.0
 	 */
 	public static function register_settings() {
-		register_setting( 'osa_settings', 'osa_settings', array( 'Ocean_Stick_Anything', 'sanitize_settings' ) ); 
+		register_setting( 'osa_settings', 'osa_settings', array( 'Ocean_Stick_Anything', 'sanitize_settings' ) );
 	}
 
 	/**
@@ -393,9 +409,9 @@ final class Ocean_Stick_Anything {
 		// Get settings
 		$settings = self::get_settings();
 
-		foreach( $settings as $key => $setting ) {
-			if ( isset( $_POST['osa_settings'][$key] ) ) {
-				update_option( 'osa_'. $key, sanitize_text_field( wp_unslash( $_POST['osa_settings'][$key] ) ) );
+		foreach ( $settings as $key => $setting ) {
+			if ( isset( $_POST['osa_settings'][ $key ] ) ) {
+				update_option( 'osa_' . $key, sanitize_text_field( wp_unslash( $_POST['osa_settings'][ $key ] ) ) );
 			}
 		}
 
@@ -420,49 +436,51 @@ final class Ocean_Stick_Anything {
 
 } // End Class
 
-#--------------------------------------------------------------------------------
-#region Freemius
-#--------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------
+// region Freemius
+// --------------------------------------------------------------------------------
 
-	if ( ! function_exists( 'ocean_stick_anything_fs' ) ) {
-		// Create a helper function for easy SDK access.
-		function ocean_stick_anything_fs() {
-			global $ocean_stick_anything_fs;
+if ( ! function_exists( 'ocean_stick_anything_fs' ) ) {
+	// Create a helper function for easy SDK access.
+	function ocean_stick_anything_fs() {
+		global $ocean_stick_anything_fs;
 
-			if ( ! isset( $ocean_stick_anything_fs ) ) {
-				$ocean_stick_anything_fs = OceanWP_EDD_Addon_Migration::instance( 'ocean_stick_anything_fs' )->init_sdk( array(
+		if ( ! isset( $ocean_stick_anything_fs ) ) {
+			$ocean_stick_anything_fs = OceanWP_EDD_Addon_Migration::instance( 'ocean_stick_anything_fs' )->init_sdk(
+				array(
 					'id'              => '3815',
 					'slug'            => 'ocean-stick-anything',
 					'public_key'      => 'pk_f9a790f52e74ee60eb2812ba763dd',
 					'is_premium'      => false,
 					'is_premium_only' => false,
 					'has_paid_plans'  => false,
-				) );
-			}
-
-			return $ocean_stick_anything_fs;
+				)
+			);
 		}
 
-		function ocean_stick_anything_fs_addon_init() {
-			if ( class_exists( 'Ocean_Extra' ) ) {
-				OceanWP_EDD_Addon_Migration::instance( 'ocean_stick_anything_fs' )->init();
-			}
-		}
+		return $ocean_stick_anything_fs;
+	}
 
-		if ( 0 == did_action( 'owp_fs_loaded' ) ) {
-			// Init add-on only after parent theme was loaded.
-			add_action( 'owp_fs_loaded', 'ocean_stick_anything_fs_addon_init', 15 );
-		} else {
-			if ( class_exists( 'Ocean_Extra' ) ) {
-				/**
-				 * This makes sure that if the theme was already loaded
-				 * before the plugin, it will run Freemius right away.
-				 *
-				 * This is crucial for the plugin's activation hook.
-				 */
-				ocean_stick_anything_fs_addon_init();
-			}
+	function ocean_stick_anything_fs_addon_init() {
+		if ( class_exists( 'Ocean_Extra' ) ) {
+			OceanWP_EDD_Addon_Migration::instance( 'ocean_stick_anything_fs' )->init();
 		}
 	}
 
-#endregion
+	if ( 0 == did_action( 'owp_fs_loaded' ) ) {
+		// Init add-on only after parent theme was loaded.
+		add_action( 'owp_fs_loaded', 'ocean_stick_anything_fs_addon_init', 15 );
+	} else {
+		if ( class_exists( 'Ocean_Extra' ) ) {
+			/**
+			 * This makes sure that if the theme was already loaded
+			 * before the plugin, it will run Freemius right away.
+			 *
+			 * This is crucial for the plugin's activation hook.
+			 */
+			ocean_stick_anything_fs_addon_init();
+		}
+	}
+}
+
+// endregion
