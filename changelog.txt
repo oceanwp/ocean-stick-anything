@@ -1,5 +1,17 @@
 == Changelog ==
 
+= 2.0.3 =
+- Updated: WordPress version number for compatibility.
+
+= 2.0.2 =
+- Improved: Scripts dependencies.
+
+= 2.0.1 =
+- Fixed: Widgets admin page issue.
+
+= 2.0.0 =
+- Added: Vanilla JS.
+
 = 1.0.6 =
 - Fixed: Warning: Use of undefined constant OE_ADMIN_PANEL_HOOK_PREFIX.
 - Fixed: Offset Settings don't function #1
