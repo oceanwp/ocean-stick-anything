@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.0.4 =
+- Improved: Theme Panel.
+
 = 2.0.3 =
 - Updated: WordPress version number for compatibility.
 
