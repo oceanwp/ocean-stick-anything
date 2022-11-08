@@ -425,7 +425,7 @@ final class Ocean_Stick_Anything {
 	public static function admin_scripts( $hook ) {
 
 		// Only load scripts when needed
-		if ( class_exists( 'Ocean_Extra' ) && OE_ADMIN_PANEL_HOOK_PREFIX . '-stick' != $hook ) {
+		if ( ! class_exists( 'Ocean_Extra' ) && OE_ADMIN_PANEL_HOOK_PREFIX . '-stick' != $hook ) {
 			return;
 		}
 
