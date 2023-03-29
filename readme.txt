@@ -31,6 +31,9 @@ This plugin will only work with the [OceanWP](https://oceanwp.org/) theme. You a
 
 == Changelog ==
 
+= 2.0.5 - MAR 29 2023 =
+- Updated: Version numbers for compatibility.
+
 = 2.0.4 =
 - Improved: Theme Panel.
 
