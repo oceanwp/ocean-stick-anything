@@ -118,6 +118,7 @@ module.exports = function (grunt) {
                     "!Gruntfile.js",
                     "!package.json",
                     "!package-lock.json",
+                    "!phpcs.xml.dist",
                     "!.csscomb.json",
                     "!.tern-project",
                     "!.gitignore",
