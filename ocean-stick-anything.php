@@ -440,17 +440,22 @@ final class Ocean_Stick_Anything {
 	 */
 	public static function admin_scripts( $hook ) {
 
-		// Only load scripts when needed
-		if ( ! class_exists( 'Ocean_Extra' ) && OE_ADMIN_PANEL_HOOK_PREFIX . '-stick' != $hook ) {
+		// Only load scripts when needed.
+		if ( ! class_exists( 'Ocean_Extra' ) ) {
 			return;
 		}
 
-		// CSS
+		if ( class_exists( 'Ocean_Extra' ) && OE_ADMIN_PANEL_HOOK_PREFIX . '-stick' != $hook ) {
+
+			return;
+		}
+
+		// CSS.
 		wp_enqueue_style( 'oceanwp-stick-anything', plugins_url( '/assets/css/main.min.css', __FILE__ ) );
 
 	}
 
-} // End Class
+} // End Class.
 
 // --------------------------------------------------------------------------------
 // region Freemius
