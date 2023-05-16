@@ -70,6 +70,22 @@ final class Ocean_Stick_Anything {
 	 */
 	public $version;
 
+	/**
+	 * The plugin url.
+	 *
+	 * @var     string
+	 * @access  public
+	 */
+	public $plugin_url;
+
+	/**
+	 * The plugin path.
+	 *
+	 * @var     string
+	 * @access  public
+	 */
+	public $plugin_path;
+
 	// Admin - Start
 	/**
 	 * The admin object.
