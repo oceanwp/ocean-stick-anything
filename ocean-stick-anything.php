@@ -7,7 +7,7 @@
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.6
- * Tested up to:        6.2
+ * Tested up to:        6.2.1
  *
  * Text Domain: ocean-stick-anything
  * Domain Path: /languages
@@ -17,7 +17,7 @@
  * @author OceanWP
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
