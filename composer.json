@@ -28,7 +28,7 @@
 		],
         "lint:wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
         "lint:summary": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor --exclude node_modules .",
-        "make-pot": "wp i18n make-pot . languages/ocean-stick-anything.pot"
+        "make-pot": "wp i18n make-pot . languages/ocean-stick-anything.pot --exclude=build"
     },
 
     "config": {

@@ -3,11 +3,11 @@
  * Plugin Name:         Ocean Stick Anything
  * Plugin URI:          https://oceanwp.org/extension/ocean-stick-anything/
  * Description:         A simple plugin to stick anything you want on your site.
- * Version:             2.0.5
+ * Version:             2.0.6
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.6
- * Tested up to:        6.1.1
+ * Tested up to:        6.2.2
  *
  * Text Domain: ocean-stick-anything
  * Domain Path: /languages
@@ -17,7 +17,7 @@
  * @author OceanWP
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -70,6 +70,22 @@ final class Ocean_Stick_Anything {
 	 */
 	public $version;
 
+	/**
+	 * The plugin url.
+	 *
+	 * @var     string
+	 * @access  public
+	 */
+	public $plugin_url;
+
+	/**
+	 * The plugin path.
+	 *
+	 * @var     string
+	 * @access  public
+	 */
+	public $plugin_path;
+
 	// Admin - Start
 	/**
 	 * The admin object.
@@ -91,7 +107,7 @@ final class Ocean_Stick_Anything {
 		$this->token       = 'ocean-stick-anything';
 		$this->plugin_url  = plugin_dir_url( __FILE__ );
 		$this->plugin_path = plugin_dir_path( __FILE__ );
-		$this->version     = '2.0.5';
+		$this->version     = '2.0.6';
 
 		register_activation_hook( __FILE__, array( $this, 'install' ) );
 
@@ -424,17 +440,22 @@ final class Ocean_Stick_Anything {
 	 */
 	public static function admin_scripts( $hook ) {
 
-		// Only load scripts when needed
-		if ( ! class_exists( 'Ocean_Extra' ) && OE_ADMIN_PANEL_HOOK_PREFIX . '-stick' != $hook ) {
+		// Only load scripts when needed.
+		if ( ! class_exists( 'Ocean_Extra' ) ) {
 			return;
 		}
 
-		// CSS
+		if ( class_exists( 'Ocean_Extra' ) && OE_ADMIN_PANEL_HOOK_PREFIX . '-stick' != $hook ) {
+
+			return;
+		}
+
+		// CSS.
 		wp_enqueue_style( 'oceanwp-stick-anything', plugins_url( '/assets/css/main.min.css', __FILE__ ) );
 
 	}
 
-} // End Class
+} // End Class.
 
 // --------------------------------------------------------------------------------
 // region Freemius
