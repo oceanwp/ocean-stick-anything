@@ -3,11 +3,11 @@
  * Plugin Name:         Ocean Stick Anything
  * Plugin URI:          https://oceanwp.org/extension/ocean-stick-anything/
  * Description:         A simple plugin to stick anything you want on your site.
- * Version:             2.0.7
+ * Version:             2.0.8
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.6
- * Tested up to:        6.3.1
+ * Tested up to:        6.4.3
  *
  * Text Domain: ocean-stick-anything
  * Domain Path: /languages
@@ -107,7 +107,7 @@ final class Ocean_Stick_Anything {
 		$this->token       = 'ocean-stick-anything';
 		$this->plugin_url  = plugin_dir_url( __FILE__ );
 		$this->plugin_path = plugin_dir_path( __FILE__ );
-		$this->version     = '2.0.7';
+		$this->version     = '2.0.8';
 
 		register_activation_hook( __FILE__, array( $this, 'install' ) );
 
@@ -445,8 +445,7 @@ final class Ocean_Stick_Anything {
 			return;
 		}
 
-		if ( class_exists( 'Ocean_Extra' ) && OE_ADMIN_PANEL_HOOK_PREFIX . '-stick' != $hook ) {
-
+		if ( ! class_exists( 'Ocean_Extra' ) && OE_ADMIN_PANEL_HOOK_PREFIX . '-stick' != $hook ) {
 			return;
 		}
 
