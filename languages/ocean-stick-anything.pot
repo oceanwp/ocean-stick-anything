@@ -1,17 +1,17 @@
-# Copyright (C) 2023 OceanWP
+# Copyright (C) 2024 OceanWP
 # This file is distributed under the same license as the Ocean Stick Anything plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ocean Stick Anything 2.0.7\n"
+"Project-Id-Version: Ocean Stick Anything 2.0.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-stick-anything\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-09-06T05:26:57+00:00\n"
+"POT-Creation-Date: 2024-05-15T07:26:52+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.7.1\n"
+"X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: ocean-stick-anything\n"
 
 #. Plugin Name of the plugin
@@ -51,6 +51,10 @@ msgstr ""
 msgid "Stick"
 msgstr ""
 
+#: ocean-stick-anything.php:316
+msgid "You need to add your CSS selector in the Elements field, %1$sfollow this article%2$s to know how to get a CSS selector."
+msgstr ""
+
 #: ocean-stick-anything.php:327
 msgid "Elements"
 msgstr ""
@@ -77,4 +81,16 @@ msgstr ""
 
 #: ocean-stick-anything.php:362
 msgid "Un-stick From (px)"
+msgstr ""
+
+#: ocean-stick-anything.php:398
+msgid "OceanWP Pro Bundle"
+msgstr ""
+
+#: ocean-stick-anything.php:400
+msgid "The OceanWP Pro Bundle is a must-have for any type of website. Boost and level up your website with various impressive and flexible functionalities, including the Sticky Header and Sticky Footer."
+msgstr ""
+
+#: ocean-stick-anything.php:401
+msgid "Read More"
 msgstr ""

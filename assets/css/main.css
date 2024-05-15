@@ -2,10 +2,10 @@
 a:focus, .button, .wp-core-ui .button-link:focus,
 .wp-core-ui .button-secondary:focus, .wp-core-ui .button.focus,
 .wp-core-ui .button:focus { -webkit-box-shadow: none !important; box-shadow: none !important; }
-body .button.owp-button { background-color: #13aff0; color: #fff; height: auto; font-size: 12px; line-height: 1; font-weight: 600; text-transform: uppercase; margin: 0; padding: 14px 20px; border: 0; cursor: pointer; text-align: center; letter-spacing: .1em; border-radius: 3px; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; -o-transition: all .3s ease; -ms-transition: all .3s ease; transition: all .3s ease; }
+body .button.owp-button { background-color: #181515; color: #fff; height: auto; font-size: 12px; line-height: 1; font-weight: 600; text-transform: uppercase; margin: 0; padding: 14px 20px; border: 0; cursor: pointer; text-align: center; letter-spacing: .1em; border-radius: 3px; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; -o-transition: all .3s ease; -ms-transition: all .3s ease; transition: all .3s ease; }
 body .button.owp-button:hover,
 body .button.owp-button:focus,
-body .button.owp-button:active { background-color: #0b7cac; color: #fff; }
+body .button.owp-button:active { background-color: #FFB100; color: #000; }
 body .button.owp-button:active { -webkit-transform: none; -ms-transform: none; transform: none; }
 
 /* Settings Wrap */
@@ -17,7 +17,7 @@ body .button.owp-button:active { -webkit-transform: none; -ms-transform: none; t
 
 /* Sidebar */
 .oceanwp-bloc { display: inline-block; position: relative; width: 100%; background-color: #fff; margin: 0 auto 15px auto; border-radius: 3px; border: 1px solid #e5e5e5; -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.04); box-shadow: 0 1px 1px rgba(0,0,0,.04); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; overflow: hidden; }
-.oceanwp-bloc h3 { display: block; font-size: 14px; font-weight: 600; padding: 12px 10px; background-color: #13aff0; color: #fff; text-transform: uppercase; letter-spacing: .4px; margin: 0 0 22px; text-align: center; }
+.oceanwp-bloc h3 { display: block; font-size: 14px; font-weight: 600; padding: 12px 10px; background-color: #181515; color: #fff; text-transform: uppercase; letter-spacing: .4px; margin: 0 0 22px; text-align: center; }
 .oceanwp-bloc .content-wrap { position: relative; padding: 0 30px 25px; z-index: 2; text-align: center; }
 .oceanwp-bloc p.content { font-size: 14px; color: #5a5a5a; margin: 0; }
 body .oceanwp-bloc .button.owp-button { margin: 22px 0 10px; }

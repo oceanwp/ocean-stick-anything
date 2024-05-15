@@ -7,7 +7,7 @@
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.6
- * Tested up to:        6.4.3
+ * Tested up to:        6.5.3
  *
  * Text Domain: ocean-stick-anything
  * Domain Path: /languages
@@ -313,7 +313,7 @@ final class Ocean_Stick_Anything {
 							<p class="description">
 								<?php
 								echo sprintf(
-									esc_html__( 'You need to add your CSS selector in the Elements field, %1$sfollow this article%2$s to know how to get a CSS selector.', 'ocean-extra' ),
+									esc_html__( 'You need to add your CSS selector in the Elements field, %1$sfollow this article%2$s to know how to get a CSS selector.', 'ocean-stick-anything' ),
 									'<a href="https://docs.oceanwp.org/article/529-how-to-get-a-css-selector" target="_blank">',
 									'</a>'
 								);
@@ -391,14 +391,14 @@ final class Ocean_Stick_Anything {
 	public static function admin_page_sidebar() {
 
 		// Link
-		$link = 'https://oceanwp.org/extension/ocean-sticky-header/?utm_source=dash&utm_medium=stick-panel&utm_campaign=sticky';
+		$link = 'https://oceanwp.org/oceanwp-pro-bundle-features/';
 		?>
 
 		<div class="oceanwp-bloc oceanwp-sticky">
-			<h3><?php esc_html_e( 'Ocean Sticky Header', 'ocean-extra' ); ?></h3>
+			<h3><?php esc_html_e( 'OceanWP Pro Bundle', 'ocean-stick-anything' ); ?></h3>
 			<div class="content-wrap">
-				<p class="content"><?php esc_html_e( 'This plugin is a must-have for any type of website, it allow you to fix your header automatically or manually if you create a custom header style with many control settings.', 'ocean-extra' ); ?></p>
-				<a href="<?php echo esc_url( $link ); ?>" class="button owp-button" target="_blank"><?php esc_html_e( 'Read More', 'ocean-extra' ); ?></a>
+				<p class="content"><?php esc_html_e( 'The OceanWP Pro Bundle is a must-have for any type of website. Boost and level up your website with various impressive and flexible functionalities, including the Sticky Header and Sticky Footer.', 'ocean-stick-anything' ); ?></p>
+				<a href="<?php echo esc_url( $link ); ?>" class="button owp-button" target="_blank"><?php esc_html_e( 'Read More', 'ocean-stick-anything' ); ?></a>
 			</div>
 			<i class="dashicons dashicons-admin-post"></i>
 		</div>
