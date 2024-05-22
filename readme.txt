@@ -31,7 +31,7 @@ This plugin will only work with the [OceanWP](https://oceanwp.org/) theme. You a
 
 == Changelog ==
 
-= 2.0.8 - MAY 20 2024 =
+= 2.0.8 - MAY 22 2024 =
 - Updated: Compatibility: WordPress version number.
 
 = 2.0.7 - SEP 6 2023 =
