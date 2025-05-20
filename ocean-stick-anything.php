@@ -3,11 +3,11 @@
  * Plugin Name:         Ocean Stick Anything
  * Plugin URI:          https://oceanwp.org/extension/ocean-stick-anything/
  * Description:         A simple plugin to stick anything you want on your site.
- * Version:             2.0.8
+ * Version:             2.0.9
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.6
- * Tested up to:        6.5.3
+ * Tested up to:        6.8
  *
  * Text Domain: ocean-stick-anything
  * Domain Path: /languages

@@ -1,36 +1,41 @@
-# Copyright (C) 2024 OceanWP
+# Copyright (C) 2025 OceanWP
 # This file is distributed under the same license as the Ocean Stick Anything plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ocean Stick Anything 2.0.8\n"
+"Project-Id-Version: Ocean Stick Anything 2.0.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-stick-anything\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-05-22T07:08:03+00:00\n"
+"POT-Creation-Date: 2025-05-19T10:50:54+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.9.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ocean-stick-anything\n"
 
 #. Plugin Name of the plugin
+#: ocean-stick-anything.php
 msgid "Ocean Stick Anything"
 msgstr ""
 
 #. Plugin URI of the plugin
+#: ocean-stick-anything.php
 msgid "https://oceanwp.org/extension/ocean-stick-anything/"
 msgstr ""
 
 #. Description of the plugin
+#: ocean-stick-anything.php
 msgid "A simple plugin to stick anything you want on your site."
 msgstr ""
 
 #. Author of the plugin
+#: ocean-stick-anything.php
 msgid "OceanWP"
 msgstr ""
 
 #. Author URI of the plugin
+#: ocean-stick-anything.php
 msgid "https://oceanwp.org/"
 msgstr ""
 
@@ -52,6 +57,7 @@ msgid "Stick"
 msgstr ""
 
 #: ocean-stick-anything.php:316
+#, php-format
 msgid "You need to add your CSS selector in the Elements field, %1$sfollow this article%2$s to know how to get a CSS selector."
 msgstr ""
 
