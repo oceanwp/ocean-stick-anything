@@ -2,8 +2,8 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: stick, sticky, stick anything, oceanwp
 Requires at least: 5.6
-Tested up to: 6.8
-Stable tag: 2.0.9
+Tested up to: 7.0
+Stable tag: 2.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,9 @@ This plugin will only work with the [OceanWP](https://oceanwp.org/) theme. You a
 1. Settings.
 
 == Changelog ==
+
+= 2.1.0 - MAY 20 2026 =
+- Updated: Compatibility: WordPress version number.
 
 = 2.0.9 - MAY 19 2025 =
 - Updated: Compatibility: WordPress version number.
