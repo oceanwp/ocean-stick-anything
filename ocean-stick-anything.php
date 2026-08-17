@@ -3,11 +3,13 @@
  * Plugin Name:         Ocean Stick Anything
  * Plugin URI:          https://oceanwp.org/extension/ocean-stick-anything/
  * Description:         A simple plugin to stick anything you want on your site.
- * Version:             2.1.0
+ * Version:             2.1.1
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.6
- * Tested up to:        7.0
+ * Tested up to:        7.1
+ * License:             GPLv2 or later
+ * License URI:         https://www.gnu.org/licenses/gpl-2.0.html
  *
  * Text Domain: ocean-stick-anything
  * Domain Path: /languages
@@ -150,7 +152,7 @@ final class Ocean_Stick_Anything {
 	 * @since 1.0.0
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'ocean-stick-anything' ), '1.0.0' );
 	}
 
 	/**
@@ -159,7 +161,7 @@ final class Ocean_Stick_Anything {
 	 * @since 1.0.0
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'ocean-stick-anything' ), '1.0.0' );
 	}
 
 	/**
