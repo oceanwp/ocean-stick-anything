@@ -1,15 +1,15 @@
 # Copyright (C) 2026 OceanWP
-# This file is distributed under the same license as the Ocean Stick Anything plugin.
+# This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ocean Stick Anything 2.1.0\n"
+"Project-Id-Version: Ocean Stick Anything 2.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-stick-anything\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-19T09:40:28+00:00\n"
+"POT-Creation-Date: 2026-08-18T10:11:20+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ocean-stick-anything\n"
@@ -39,64 +39,69 @@ msgstr ""
 msgid "https://oceanwp.org/"
 msgstr ""
 
-#: ocean-stick-anything.php:254
-#: ocean-stick-anything.php:255
+#: ocean-stick-anything.php:155
+#: ocean-stick-anything.php:164
+msgid "Cheatin&#8217; huh?"
+msgstr ""
+
+#: ocean-stick-anything.php:256
+#: ocean-stick-anything.php:257
 msgid "Stick Elements"
 msgstr ""
 
-#: ocean-stick-anything.php:290
+#: ocean-stick-anything.php:292
 msgid "Stick Anything"
 msgstr ""
 
-#: ocean-stick-anything.php:291
+#: ocean-stick-anything.php:293
 msgid "On this page, you can stick any element of your site just by adding the elements in the input."
 msgstr ""
 
-#: ocean-stick-anything.php:312
+#: ocean-stick-anything.php:314
 msgid "Stick"
 msgstr ""
 
-#: ocean-stick-anything.php:316
+#: ocean-stick-anything.php:318
 #, php-format
 msgid "You need to add your CSS selector in the Elements field, %1$sfollow this article%2$s to know how to get a CSS selector."
 msgstr ""
 
-#: ocean-stick-anything.php:327
+#: ocean-stick-anything.php:329
 msgid "Elements"
 msgstr ""
 
-#: ocean-stick-anything.php:332
+#: ocean-stick-anything.php:334
 msgid "Add the element(s) you want to stick separated by a comma. If you want to stick the sidebar, add \".widget-area\"."
 msgstr ""
 
-#: ocean-stick-anything.php:338
+#: ocean-stick-anything.php:340
 msgid "Offset (px)"
 msgstr ""
 
-#: ocean-stick-anything.php:343
+#: ocean-stick-anything.php:345
 msgid "Add a space in pixels between the top of the page and the sticky element ."
 msgstr ""
 
-#: ocean-stick-anything.php:352
+#: ocean-stick-anything.php:354
 msgid "Responsive"
 msgstr ""
 
-#: ocean-stick-anything.php:355
+#: ocean-stick-anything.php:357
 msgid "Here you can choose to un-stick the element(s) when your screen is smaller."
 msgstr ""
 
-#: ocean-stick-anything.php:362
+#: ocean-stick-anything.php:364
 msgid "Un-stick From (px)"
 msgstr ""
 
-#: ocean-stick-anything.php:398
+#: ocean-stick-anything.php:400
 msgid "OceanWP Pro Bundle"
 msgstr ""
 
-#: ocean-stick-anything.php:400
+#: ocean-stick-anything.php:402
 msgid "The OceanWP Pro Bundle is a must-have for any type of website. Boost and level up your website with various impressive and flexible functionalities, including the Sticky Header and Sticky Footer."
 msgstr ""
 
-#: ocean-stick-anything.php:401
+#: ocean-stick-anything.php:403
 msgid "Read More"
 msgstr ""
